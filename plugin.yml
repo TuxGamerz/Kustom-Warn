@@ -1,0 +1,15 @@
+name: Kustom Warn
+main: me.kustomkraft.kustomwarn.KustomWarnMain
+author: Gamerzaction
+database: false
+version: 0.05
+description: Warning system for server admins
+commands:
+    warn:
+        usage: /<command> [player] [reason]
+        permission: kustomwarn.warn
+        default: op
+    list:
+        usage: /<command>
+        permission: kustomwarn.check
+        default: op

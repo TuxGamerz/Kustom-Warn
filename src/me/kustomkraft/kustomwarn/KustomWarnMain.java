@@ -2,6 +2,8 @@ package me.kustomkraft.kustomwarn;
 
 import java.io.File;
 import java.util.logging.Logger;
+
+import me.kustomkraft.kustomwarn.commands.ListCommand;
 import me.kustomkraft.kustomwarn.commands.WarnCommand;
 import me.kustomkraft.kustomwarn.utils.LocalStore;
 import org.bukkit.Bukkit;
@@ -24,7 +26,7 @@ public class KustomWarnMain extends JavaPlugin {
         warnedPlayers.load();
 
         getCommand("warn").setExecutor(new WarnCommand(this));
-        getCommand("list").setExecutor(new WarnCommand(this));
+        getCommand("list").setExecutor(new ListCommand(this));
         getConfig().options().copyDefaults(true);
         saveConfig();
     }

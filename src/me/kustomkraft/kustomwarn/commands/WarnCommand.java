@@ -1,5 +1,6 @@
 package me.kustomkraft.kustomwarn.commands;
 
+import java.util.Calendar;
 import java.util.Date;
 import me.kustomkraft.kustomwarn.KustomWarnMain;
 import org.bukkit.ChatColor;
@@ -20,6 +21,21 @@ public class WarnCommand implements CommandExecutor{
 
     public WarnCommand(KustomWarnMain plugin) {
         this.plugin = plugin;
+    }
+
+    public String getDate(){
+        String date;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(time);
+        cal.setLenient(true);
+
+        int hour = cal.get(Calendar.HOUR);
+        int minute = cal.get(Calendar.MINUTE);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int month = cal.get(Calendar.MONTH);
+
+        date = String.valueOf(hour) + ":" + String.valueOf(minute) + " " + String.valueOf(day) + "-" + String.valueOf(month);
+        return date;
     }
 
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {

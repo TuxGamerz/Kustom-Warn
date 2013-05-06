@@ -88,12 +88,12 @@ public class LocalStore{
         return this.values.contains(value);
     }
 
-    public void add(String date, String value, String offendingPlayer) {
-        values.add(date + ": " + value + " by " + offendingPlayer);
+    public void add(String offendingPlayer, String date, String admin) {
+        values.add(offendingPlayer + " was warned by " + admin + " on " + date);
     }
 
-    public void addReason(String date, String value, String reason, String admin) {
-        values.add(date + ": " + value + " was warned for " + reason + " by " + admin);
+    public void addReason(String offendingPlayer, String admin, String reason, String date) {
+        values.add(offendingPlayer + " was warned by " + admin + " for " + reason + " on " + date);
     }
 
     public void remove(String value) {

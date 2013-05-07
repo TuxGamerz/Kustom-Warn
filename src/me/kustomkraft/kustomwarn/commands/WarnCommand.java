@@ -39,6 +39,22 @@ public class WarnCommand implements CommandExecutor{
         return date;
     }
 
+    public int getRemainingKick(){
+        int untilKick = 0;
+        if(plugin.getConfig().getInt("Kick After") <= plugin.warnedPlayers.getWarnings(selectedPlayer)){
+            untilKick = plugin.getConfig().getInt("Kick After") - plugin.warnedPlayers.getWarnings(selectedPlayer);
+        }
+        return untilKick;
+    }
+
+    public int getRemainingBan(){
+        int untilBan = 0;
+        if(plugin.getConfig().getInt("Kick After") <= plugin.warnedPlayers.getWarnings(selectedPlayer)){
+            untilBan = plugin.getConfig().getInt("Kick After") - plugin.warnedPlayers.getWarnings(selectedPlayer);
+        }
+        return untilBan;
+    }
+
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         Server server = sender.getServer();
         ConsoleCommandSender consoleSender = server.getConsoleSender();
@@ -72,8 +88,8 @@ public class WarnCommand implements CommandExecutor{
                                 targetPlayer.setBanned(true);
                             }
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "This player has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)!");
-                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsKick + " before they are kicked!");
-                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsBan + " before they are banned!");
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingKick() + " before they are kicked!");
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingBan() + " before they are banned!");
                             return true;
                         }
                         consoleSender.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is exempt from being warned!");
@@ -101,8 +117,8 @@ public class WarnCommand implements CommandExecutor{
                                 targetPlayer.setBanned(true);
                             }
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "This player has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)!");
-                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsKick + " before they are kicked!");
-                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsBan + " before they are banned!");
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingKick() + " before they are kicked!");
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingBan() + " before they are banned!");
                             return true;
                         }
                         consoleSender.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is exempt from being warned!");
@@ -124,25 +140,34 @@ public class WarnCommand implements CommandExecutor{
                         int warningsKick = plugin.getConfig().getInt("Kick After");
                         int warningsBan = plugin.getConfig().getInt("Ban After") - plugin.warnedPlayers.getWarnings(targetPlayer.getName());
                         if (targetPlayer != null) {
-                            if (!targetPlayer.hasPermission("kustomwarn.exempt")) {
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "Player " + targetPlayer.getName() + " has been warned by " + player.getName());
-                                targetPlayer.sendMessage(prefix + ChatColor.RED + this.plugin.getConfig().getString("Warning"));
-                                admin = player.getName();
-                                plugin.warnedPlayers.add(targetPlayer.getName(), admin, getDate());
-                                plugin.warnedPlayers.save();
-                                if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == this.plugin.getConfig().getInt("Kick After")) {
-                                    targetPlayer.kickPlayer(this.plugin.getConfig().getString("Kick Message"));
-                                } else if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == this.plugin.getConfig().getInt("Ban After")) {
-                                    targetPlayer.kickPlayer(this.plugin.getConfig().getString("Ban Message"));
-                                    targetPlayer.setBanned(true);
+                            if(!(targetPlayer.getName() != player.getName())){
+                                if(!(targetPlayer.getName() != player.getName())){
+                                    if (!targetPlayer.hasPermission("kustomwarn.exempt")) {
+                                        Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "Player " + targetPlayer.getName() + " has been warned by " + player.getName());
+                                        targetPlayer.sendMessage(prefix + ChatColor.RED + this.plugin.getConfig().getString("Warning"));
+                                        admin = player.getName();
+                                        plugin.warnedPlayers.add(targetPlayer.getName(), admin, getDate());
+                                        plugin.warnedPlayers.save();
+                                        if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == this.plugin.getConfig().getInt("Kick After")) {
+                                            targetPlayer.kickPlayer(this.plugin.getConfig().getString("Kick Message"));
+                                        } else if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == this.plugin.getConfig().getInt("Ban After")) {
+                                            targetPlayer.kickPlayer(this.plugin.getConfig().getString("Ban Message"));
+                                            targetPlayer.setBanned(true);
+                                        }
+                                        Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "This player has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)!");
+                                        Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingKick() + " before they are kicked!");
+                                        Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingBan() + " before they are banned!");
+                                        return true;
+                                    }else{
+                                        player.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is exempt from being warned!");
+                                        return true;
+                                    }
+                                }else{
+                                    player.sendMessage(prefix + ChatColor.RED + "It is not possible to warn yourself!");
+                                    return true;
                                 }
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "This player has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)!");
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsKick + " before they are kicked!");
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsBan + " before they are banned!");
-                                return true;
+                            }else{
                             }
-                            player.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is exempt from being warned!");
-                            return true;
                         }
 
                         player.sendMessage(prefix + ChatColor.RED + "Player not found!");
@@ -166,8 +191,8 @@ public class WarnCommand implements CommandExecutor{
                                     targetPlayer.setBanned(true);
                                 }
                                 Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "This player has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)!");
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsKick + " before they are kicked!");
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + warningsBan + " before they are banned!");
+                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingKick() + " before they are kicked!");
+                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + "They have " + getRemainingBan() + " before they are banned!");
                                 return true;
                             }
                             player.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is exempt from being warned!");
@@ -184,8 +209,3 @@ public class WarnCommand implements CommandExecutor{
         return true;
     }
 }
-
-/* Location:           C:\Users\gamerz\Downloads\Kustom_Warn.jar
- * Qualified Name:     me.kustomkraft.kustomwarn.commands.WarnCommand
- * JD-Core Version:    0.6.2
- */

@@ -52,8 +52,7 @@ public class LocalStore{
         try {
             FileWriter stream = new FileWriter(this.storageFile);
             BufferedWriter out = new BufferedWriter(stream);
-
-            for (String value : this.values) {
+            for (String value : values) {
                 out.write(value + " ");
                 out.newLine();
             }
@@ -68,10 +67,13 @@ public class LocalStore{
     public int getWarnings(String offendingPlayer) {
         int warnings = 0;
         try {
-            Scanner scanner = new Scanner(this.storageFile);
+            Scanner scanner = new Scanner(storageFile);
+            scanner.useDelimiter(System.getProperty("line.seperator"));
             int count = 0;
-            while (scanner.hasNext()) {
+            while (scanner.nextLine() != null) {
                 String nextString = scanner.next();
+                Logger logger = Bukkit.getLogger();
+                logger.info(nextString);
                 if (nextString.equalsIgnoreCase(offendingPlayer)) {
                     count++;
                     warnings += count;
@@ -88,8 +90,8 @@ public class LocalStore{
         return this.values.contains(value);
     }
 
-    public void add(String offendingPlayer, String date, String admin) {
-        values.add(offendingPlayer + " was warned by " + admin + " on " + date);
+    public void add(String offendingPlayer, String admin, String date) {
+        values.add(offendingPlayer + " was warned by " + admin + " Date(HH:MM DD/MM)" + date);
     }
 
     public void addReason(String offendingPlayer, String admin, String reason, String date) {

@@ -19,7 +19,6 @@ public class ListCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         ConsoleCommandSender consoleSender = sender.getServer().getConsoleSender();
-        Player targetPlayer = sender.getServer().getPlayer(args[0]);
         String prefix = ChatColor.GREEN + "[Kustom Warn]";
         if(commandLabel.equalsIgnoreCase("list")){
             if (!(sender instanceof Player)) {
@@ -27,6 +26,7 @@ public class ListCommand implements CommandExecutor {
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
                     return true;
                 }else if (args.length == 1) {
+                    Player targetPlayer = sender.getServer().getPlayer(args[0]);
                     if (targetPlayer != null) {
                         if (!targetPlayer.hasPermission("kustomwarn.exempt")) {
                             if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == 0) {
@@ -54,6 +54,7 @@ public class ListCommand implements CommandExecutor {
                     }
                 }else if (args.length == 1) {
                     if (player.hasPermission("kustomwarn.check")) {
+                        Player targetPlayer = sender.getServer().getPlayer(args[0]);
                         if (targetPlayer != null) {
                             if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == 0) {
                                 player.sendMessage(prefix + ChatColor.GOLD + targetPlayer.getName() + " has not received any warnings!");

@@ -35,7 +35,7 @@ public class WarnCommand implements CommandExecutor{
         int day = cal.get(Calendar.DAY_OF_MONTH);
         int month = cal.get(Calendar.MONTH);
 
-        date = String.valueOf(hour) + ":" + String.valueOf(minute) + " " + String.valueOf(day) + "-" + String.valueOf(month);
+        date = String.format("%02d", hour) + ":" + String.format("%02d", minute) + " " + String.format("%02d", day) + "-" + String.format("%02d", month);
         return date;
     }
 
@@ -63,7 +63,7 @@ public class WarnCommand implements CommandExecutor{
                             targetPlayer.sendMessage(prefix + ChatColor.RED + this.plugin.getConfig().getString("Warning"));
                             selectedPlayer = targetPlayer.getName();
                             admin = "Console User";
-                            plugin.warnedPlayers.add(String.valueOf(this.time), targetPlayer.getName(), this.admin);
+                            plugin.warnedPlayers.add(targetPlayer.getName(), admin, getDate());
                             plugin.warnedPlayers.save();
                             if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == this.plugin.getConfig().getInt("Kick After")) {
                                 targetPlayer.kickPlayer(this.plugin.getConfig().getString("Kick Message"));

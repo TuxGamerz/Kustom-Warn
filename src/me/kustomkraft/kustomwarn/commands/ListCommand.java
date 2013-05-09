@@ -59,9 +59,10 @@ public class ListCommand implements CommandExecutor {
                             if (this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == 0) {
                                 player.sendMessage(prefix + ChatColor.GOLD + targetPlayer.getName() + " has not received any warnings!");
                                 return true;
+                            }else{
+                                player.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)");
+                                return true;
                             }
-                            player.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " has been warned " + this.plugin.warnedPlayers.getWarnings(targetPlayer.getName()) + " time(s)");
-                            return true;
                         }else{
                             player.sendMessage(prefix + ChatColor.RED + "Player not found!");
                             return true;

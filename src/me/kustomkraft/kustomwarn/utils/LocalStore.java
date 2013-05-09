@@ -67,13 +67,10 @@ public class LocalStore{
     public int getWarnings(String offendingPlayer) {
         int warnings = 0;
         try {
-            Scanner scanner = new Scanner(storageFile);
-            scanner.useDelimiter(System.getProperty("line.seperator"));
+            Scanner scanner = new Scanner(this.storageFile);
             int count = 0;
-            while (scanner.nextLine() != null) {
+            while (scanner.hasNext()) {
                 String nextString = scanner.next();
-                Logger logger = Bukkit.getLogger();
-                logger.info(nextString);
                 if (nextString.equalsIgnoreCase(offendingPlayer)) {
                     count++;
                     warnings += count;
@@ -81,7 +78,7 @@ public class LocalStore{
                 count = 0;
             }
         } catch (Exception e) {
-            logger.severe(e.getMessage());
+            this.logger.severe(e.getMessage());
         }
         return warnings;
     }

@@ -1,20 +1,21 @@
 package me.kustomkraft.kustomwarn;
 
-import java.io.File;
-import java.util.logging.Logger;
-
-import me.kustomkraft.kustomwarn.commands.ListCommand;
-import me.kustomkraft.kustomwarn.commands.WarnCommand;
+import me.kustomkraft.kustomwarn.commands.*;
 import me.kustomkraft.kustomwarn.utils.LocalStore;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class KustomWarnMain extends JavaPlugin {
+import java.io.File;
+import java.util.logging.Logger;
 
-    public Logger logger = Bukkit.getLogger();
+public class KustomWarn extends JavaPlugin {
+
+    private Logger logger = Bukkit.getLogger();
     public LocalStore warnedPlayers;
 
+    @Override
     public void onEnable(){
         PluginDescriptionFile pdfFile = getDescription();
         logger.info(pdfFile.getName() + " Version: " + pdfFile.getVersion() + " has been enabled!");
@@ -22,20 +23,23 @@ public class KustomWarnMain extends JavaPlugin {
         String pluginFolder = getDataFolder().getAbsolutePath();
         new File(pluginFolder).mkdirs();
 
-        warnedPlayers = new LocalStore(new File(pluginFolder + File.separatorChar + "Warned.log"));
-        warnedPlayers.load();
+        PluginManager pm = this.getServer().getPluginManager();
 
-        getCommand("warn").setExecutor(new WarnCommand(this));
-        getCommand("list").setExecutor(new ListCommand(this));
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        warnedPlayers = new LocalStore(new File(pluginFolder + File.separatorChar + "Warned.log"));
+
+        getCommand("kwarns").setExecutor(new KWarns(this));
+        getCommand("kwarn").setExecutor(new KWarn(this));
+        getCommand("kdelete").setExecutor(new KDelete(this));
+        getCommand("klist").setExecutor(new KList(this));
+
+        saveDefaultConfig();
+        warnedPlayers.save();
     }
 
     @Override
     public void onDisable(){
         PluginDescriptionFile pdfFile = getDescription();
         logger.info(pdfFile.getName() + " Version: " + pdfFile.getVersion() + " has been disabled!");
-
-        warnedPlayers.save();
     }
+
 }

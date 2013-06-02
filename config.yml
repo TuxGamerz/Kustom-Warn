@@ -1,9 +1,0 @@
-## Configurable messages
-Warning: You have been warned please read the /rules!
-Warning For: You have been warned because
-## Set the amount of warnings before each action
-Kick After: 3
-Ban After: 5
-## Set the message received when the player is kicked/banned
-Kick Message: You have received too many warnings!
-Ban Message: You have been banned!

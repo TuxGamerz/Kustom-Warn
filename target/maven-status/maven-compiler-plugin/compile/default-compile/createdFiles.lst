@@ -1,0 +1,6 @@
+me\kustomkraft\kustomwarn\commands\KDelete.class
+me\kustomkraft\kustomwarn\commands\KWarns.class
+me\kustomkraft\kustomwarn\utils\LocalStore.class
+me\kustomkraft\kustomwarn\KustomWarn.class
+me\kustomkraft\kustomwarn\commands\KWarn.class
+me\kustomkraft\kustomwarn\commands\KList.class

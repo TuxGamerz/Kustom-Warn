@@ -1,0 +1,26 @@
+name: KustomWarn
+main: me.kustomkraft.kustomwarn.KustomWarn
+version: 0.6
+author: ${project.author}
+description: Warn players that are braking the rules. With customisable messages.
+commands:
+    kwarn:
+        usage: /<command> (player) [reason]
+        description: Used to warn the player
+        permission: kustomwarn.warn
+        default: op
+    klist:
+        usage: /<command> (player)
+        description: List another players warnings
+        permission: kustomwarn.other
+        default: op
+    kwarns:
+        usage: /<command>
+        description: List your warnings
+        permission: kustomwarn.mine
+        default: true
+    kdelete:
+        usage: /<command> all/(index number) [player]
+        description: Delete a players warning(s)
+        permission: kustomwarn.delete
+        default: op

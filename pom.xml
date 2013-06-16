@@ -45,13 +45,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.kitteh</groupId>
-            <artifactId>tagapi</artifactId>
-            <version>LATEST</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 
     <build>

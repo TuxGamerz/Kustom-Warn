@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31e28896-47e0-462c-9aec-5bd170fd17fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/DBStore.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_kitteh_tagapi_3_0_SNAPSHOT.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kustom Warn.iml" afterPath="$PROJECT_DIR$/Kustom Warn.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Kustom Warn.iws" />
@@ -32,7 +24,7 @@
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/command/CommandSender.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Server.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="/DBStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352665433" ignored="false" />
-    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352935899" ignored="false" />
+    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352969878" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -611,6 +603,11 @@
       <created>1369682853719</created>
       <updated>1369682853719</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added datbase method using bukkit tools">
+      <created>1371352974065</created>
+      <updated>1371352974065</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -625,6 +622,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26927194" sideWeight="0.66523606" order="5" side_tool="false" content_ui="tabs" />
@@ -634,7 +632,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -681,7 +678,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added datbase method using bukkit tools" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -695,6 +692,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Added datbase method using bukkit tools" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

@@ -24,7 +24,7 @@
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/command/CommandSender.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Server.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="/DBStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352665433" ignored="false" />
-    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352969878" ignored="false" />
+    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371352976806" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -607,7 +607,11 @@
       <created>1371352974065</created>
       <updated>1371352974065</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added datbase method using bukkit tools">
+      <created>1371352978567</created>
+      <updated>1371352978567</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">

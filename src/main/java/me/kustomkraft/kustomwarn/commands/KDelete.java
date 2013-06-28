@@ -12,7 +12,8 @@ public class KDelete implements CommandExecutor {
     public KDelete(KustomWarn plugin) {
         this.plugin = plugin;
     }
-
+    /*TODO Make sure i can delete stuff when using the bukkit api for the database. If so implement the delete method from whatever documentation i can find
+    */
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         return true;

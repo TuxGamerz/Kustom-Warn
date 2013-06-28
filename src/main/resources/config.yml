@@ -1,5 +1,5 @@
 # Should Admins Be Alerted When Someone Is Warned? (true/false)
-Alert Admins: true
+Alert Admins: True
 # Customisable Messages
 Warning: You have been warned please follow the /rules
 Warning For: You have been warned for
@@ -9,3 +9,7 @@ Ban After: 5
 # Messages For Events
 Kick Message: Please read the /rules!
 Ban Message: You have been banned for having too many warnings!
+# Should Remaining Warnings Be Displayed?
+Show Remaining: True
+Auto Download: True
+Auto Update: True

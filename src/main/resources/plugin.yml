@@ -25,3 +25,6 @@ commands:
         description: Delete a players warning(s)
         permission: kustomwarn.delete
         default: op
+    blist:
+        usage: /<command>
+        description: Development command (if here in release please leave a post to let me know)

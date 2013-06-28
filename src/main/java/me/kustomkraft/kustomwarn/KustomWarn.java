@@ -1,11 +1,10 @@
 package me.kustomkraft.kustomwarn;
 
 import me.kustomkraft.kustomwarn.commands.*;
-import me.kustomkraft.kustomwarn.utils.DBStore;
 import me.kustomkraft.kustomwarn.utils.LocalStore;
+import me.kustomkraft.kustomwarn.utils.PluginUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.persistence.PersistenceException;
@@ -18,6 +17,7 @@ public class KustomWarn extends JavaPlugin {
 
     private Logger logger = Bukkit.getLogger();
     public LocalStore warnedPlayers;
+    protected PluginUpdater pluginUpdater;
 
     @Override
     public void onEnable(){
@@ -25,41 +25,34 @@ public class KustomWarn extends JavaPlugin {
         logger.info(pdfFile.getName() + " Version: " + pdfFile.getVersion() + " has been enabled!");
 
         String pluginFolder = getDataFolder().getAbsolutePath();
-        new File(pluginFolder).mkdirs();
-
-        PluginManager pm = this.getServer().getPluginManager();
+        (new File(pluginFolder)).mkdirs();
 
         warnedPlayers = new LocalStore(new File(pluginFolder + File.separatorChar + "Warned.log"));
+        warnedPlayers.load();
 
         getCommand("kwarns").setExecutor(new KWarns(this));
         getCommand("kwarn").setExecutor(new KWarn(this));
         getCommand("kdelete").setExecutor(new KDelete(this));
         getCommand("klist").setExecutor(new KList(this));
+        getCommand("blist").setExecutor(new ListOff(this));
+
+        this.pluginUpdater = new PluginUpdater(this, "http://dev.bukkit.org/bukkit-plugins/kustom-warn/files.rss");
+        if (this.getConfig().getBoolean("Auto Update")){
+            if (this.pluginUpdater.updateRequired()) {
+                    logger.info("New version available");
+                    logger.info("Get it at: " + pluginUpdater.getVersionLink());
+            }
+        }
 
         saveDefaultConfig();
-        warnedPlayers.save();
     }
 
     @Override
     public void onDisable(){
         PluginDescriptionFile pdfFile = getDescription();
         logger.info(pdfFile.getName() + " Version: " + pdfFile.getVersion() + " has been disabled!");
-    }
-
-    private void setupDatabase() {
-        try {
-            getDatabase().find(DBStore.class).findRowCount();
-        } catch (PersistenceException ex) {
-            System.out.println("Installing database for " + getDescription().getName() + " due to first time usage");
-            installDDL();
-        }
-    }
-
-    @Override
-    public List<Class<?>> getDatabaseClasses() {
-        List<Class<?>> list = new ArrayList<Class<?>>();
-        list.add(DBStore.class);
-        return list;
+        pluginUpdater.getFile("http://dev.bukkit.org/media/files/706/595/Kustom-Warn.jar");
+        warnedPlayers.save();
     }
 
 }

@@ -15,7 +15,7 @@ public class KWarns implements CommandExecutor {
     public KWarns(KustomWarn plugin) {
         this.plugin = plugin;
     }
-
+    //TODO once the dbstore class is working implement it here for a player to list their own  warnings
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         ConsoleCommandSender consoleSender = sender.getServer().getConsoleSender();

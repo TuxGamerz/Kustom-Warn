@@ -1,124 +1,110 @@
 package me.kustomkraft.kustomwarn.utils;
 
-import me.kustomkraft.kustomwarn.commands.KWarn;
-import org.bukkit.Bukkit;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class LocalStore {
+import me.kustomkraft.kustomwarn.commands.KWarn;
+import org.bukkit.Bukkit;
 
-    private KWarn kwarn;
-    private ArrayList<String> output;
-    private Logger logger = Bukkit.getLogger();
+public class LocalStore{
+
     private File storageFile;
+    private ArrayList<String> values;
+    private Logger logger = Bukkit.getLogger();
+    private KWarn warnCommand;
 
-    public LocalStore (File file) {
-        storageFile = file;
-        output = new ArrayList();
+    public LocalStore(File file){
 
-        if (!storageFile.exists()){
+        this.storageFile = file;
+        this.values = new ArrayList();
+
+        if (!this.storageFile.exists())
             try {
                 storageFile.createNewFile();
-            } catch (IOException e){
-                logger.info(e.getLocalizedMessage());
+
+            } catch (IOException e) {
+                logger.severe(e.getMessage());
             }
-        }
     }
 
-    public void load () {
+    public void load(){
         try {
-            DataInputStream inputStream = new DataInputStream(new FileInputStream(storageFile));
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            DataInputStream input = new DataInputStream(new FileInputStream(this.storageFile));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             String line;
-            while ((line = bufferedReader.readLine()) == null) {
-                if (kwarn.warningReason != null) {
-                    add(line, line, line, line);
-                } else {
-                    addReason(line, line, line, line, line);
+            while ((line = reader.readLine()) != null) {
+                if (this.warnCommand.warningReason != null){
+                    addReason(line, line, line, line);
+                }else {
+                    add(line, line, line);
                 }
             }
-            bufferedReader.close();
-            inputStream.close();
-        } catch (IOException e) {
-            logger.info(e.getLocalizedMessage());
+
+            reader.close();
+            input.close();
+        } catch (Exception e) {
+            logger.severe(e.getMessage());
         }
     }
 
-    public void save () {
+    public void save() {
         try {
-            FileWriter fileWriter = new FileWriter(storageFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (String value: output) {
-                bufferedWriter.write(value + " ");
-                bufferedWriter.newLine();
+            FileWriter stream = new FileWriter(this.storageFile);
+            BufferedWriter out = new BufferedWriter(stream);
+            for (String value : values) {
+                out.write(value + " ");
+                out.newLine();
             }
-            bufferedWriter.close();
-            fileWriter.close();
+
+            out.close();
+            stream.close();
         } catch (IOException e) {
-            logger.info(e.getLocalizedMessage());
+            logger.severe(e.getMessage());
         }
     }
 
-    public int getWarnings (String player) {
+    public int getWarnings(String offendingPlayer) {
         int warnings = 0;
         try {
-            Scanner scanner = new Scanner(storageFile);
+            Scanner scanner = new Scanner(this.storageFile);
             int count = 0;
-            while (scanner.hasNextLine()) {
-                String playerName = null;
-                if (playerName.equalsIgnoreCase(player)) {
+            while (scanner.hasNext()) {
+                String nextString = scanner.next();
+                if (nextString.equalsIgnoreCase(offendingPlayer)) {
                     count++;
                     warnings += count;
                 }
+                count = 0;
             }
         } catch (Exception e) {
-            logger.info(e.getLocalizedMessage());
+            this.logger.severe(e.getMessage());
         }
         return warnings;
     }
 
-    public String signWarnings (String player) {
-        String warningText = null;
-        try{
-            Scanner scanner = new Scanner(storageFile);
-            while (scanner.next() != null) {
-                String playerName = null;
-                if (playerName.equalsIgnoreCase(player)) {
-                    if (scanner.next().equalsIgnoreCase(playerName)) {
-
-                    }
-                }
-            }
-        } catch (IOException e) {
-            logger.info(e.getLocalizedMessage());
-        }
-        return warningText;
+    public boolean contains(String value) {
+        return values.contains(value);
     }
 
-    public String displayWarning (String player) {
-        String warningInfo = null;
-        return warningInfo;
+    public void add(String offendingPlayer, String admin, String date) {
+        values.add(offendingPlayer + " was warned by " + admin + " Date(HH:MM DD/MM)" + date);
     }
 
-    public String displaySpecific (String indexNumber, String player) {
-        String warningInfo = null;
-        return warningInfo;
+    public void addReason(String offendingPlayer, String admin, String reason, String date) {
+        values.add(offendingPlayer + " was warned by " + admin + " for " + reason + " on " + date);
     }
 
-    public void add (String warningNumber,String offender, String admin, String date) {
-        output.add(warningNumber + " | " + offender + " was warned by  " + admin + " | " + date);
+    public void remove(String value) {
+        values.remove(value);
     }
 
-    public void addReason (String warningNumber, String offender, String admin, String reason, String date) {
-        output.add(warningNumber + " | " + offender + " was warned by " + admin +  " for " + reason + " | " + date);
+    public void removeReason(String value, String reason) {
+        values.remove(value + reason);
     }
 
-    public void remove (int index, String playerName) {
-        storageFile.delete();
+    public ArrayList<String> getValues() {
+        return values;
     }
-
 }

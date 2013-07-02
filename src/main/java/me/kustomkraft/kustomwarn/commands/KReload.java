@@ -2,29 +2,29 @@ package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.Server;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class ListOff implements CommandExecutor {
+import java.util.logging.Logger;
+
+public class KReload implements CommandExecutor {
 
     private KustomWarn plugin;
 
-    public ListOff(KustomWarn plugin) {
+    public KReload(KustomWarn plugin) {
         this.plugin = plugin;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
-        Server server = Bukkit.getServer();
-        if (command.getName().equalsIgnoreCase("blist")){
-            if (args.length == 0){
-                OfflinePlayer[] offlinePlayer = server.getOfflinePlayers().clone();
-                sender.sendMessage(String.valueOf(offlinePlayer));
-            }
+        if (commandLabel.equalsIgnoreCase("kreload")) {
+            plugin.reloadConfig();
+            sender.sendMessage(ChatColor.GREEN + "[Kustom Warn]" + ChatColor.YELLOW + "Config Reloaded");
+            return true;
         }
         return true;
     }
+
 }

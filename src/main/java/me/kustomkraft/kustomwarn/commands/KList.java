@@ -8,6 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 public class KList implements CommandExecutor {
 
     private KustomWarn plugin;
@@ -29,16 +31,28 @@ public class KList implements CommandExecutor {
                 } else if (args.length == 1) {
                     Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
                     if (targetPlayer.isOnline()) {
-                        if (plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == 0) {
-
+                        if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) == 0) {
+                            consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has not received any warnings");
+                            return true;
                         } else {
-
+                            List warningsList = plugin.getCustomConfiguration().getStringList(targetPlayer.getName() + ".warnings");
+                            if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) != 0) {
+                                for (Object s : warningsList) {
+                                    consoleSender.sendMessage(prefix + ChatColor.RED + s);
+                                }
+                            }
                         }
                     } else if (targetPlayer.hasPlayedBefore()){
-                        if (plugin.warnedPlayers.getWarnings(targetPlayer.getName()) == 0) {
-
+                        if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) == 0) {
+                            consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has not received any warnings");
+                            return true;
                         } else {
-
+                            List warningsList = plugin.getCustomConfiguration().getStringList(targetPlayer.getName() + ".warnings");
+                            if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) != 0) {
+                                for (Object s : warningsList) {
+                                    consoleSender.sendMessage(prefix + ChatColor.RED + s);
+                                }
+                            }
                         }
                     } else {
                         consoleSender.sendMessage(prefix + ChatColor.RED + "This player has not played on this server!");
@@ -46,9 +60,41 @@ public class KList implements CommandExecutor {
                     }
                 }
             } else {
+                Player player = (Player) sender;
                 if (args.length == 0) {
-
+                    player.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
+                    player.sendMessage(prefix + ChatColor.RED + "Usage: /klist [player]");
+                    return true;
                 } else if (args.length == 1) {
+                    Player targetPlayer = player.getServer().getPlayer(args[0]);
+                    if (targetPlayer.isOnline()) {
+                        if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) == 0) {
+                            consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has not received any warnings");
+                            return true;
+                        } else {
+                            List warningsList = plugin.getCustomConfiguration().getStringList(targetPlayer.getName() + ".warnings");
+                            if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) != 0) {
+                                for (Object s : warningsList) {
+                                    consoleSender.sendMessage(prefix + ChatColor.RED + s);
+                                }
+                            }
+                        }
+                    } else if (targetPlayer.hasPlayedBefore()){
+                        if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) == 0) {
+                            player.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has not received any warnings");
+                            return true;
+                        } else {
+                            List warningsList = plugin.getCustomConfiguration().getStringList(targetPlayer.getName() + ".warnings");
+                            if (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) != 0) {
+                                for (Object s : warningsList) {
+                                    player.sendMessage(prefix + ChatColor.RED + s);
+                                }
+                            }
+                        }
+                    } else {
+                        player.sendMessage(prefix + ChatColor.RED + "This player has not played on this server!");
+                        return true;
+                    }
 
                 }
             }

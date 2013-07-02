@@ -2,36 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31e28896-47e0-462c-9aec-5bd170fd17fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/ListOff.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_2_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/tuxgamerz.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/DBStore.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R0_2_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R1_1_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KDelete.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KDelete.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReload.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_6_1_R0_1_SNAPSHOT.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/SQLibrary.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/Warnings.yml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_5_2_R1_1_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_2_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/ListOff.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kustom Warn.iml" afterPath="$PROJECT_DIR$/Kustom Warn.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Kustom Warn.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372275086180" ignored="false" />
+    <file path="/pom.xml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372760068047" ignored="false" />
     <file path="/KustomWarnMain.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369684242451" ignored="false" />
-    <file path="/plugin.yml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371557153374" ignored="false" />
-    <file path="/config.yml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372248252265" ignored="false" />
-    <file path="/KWarn.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371947959698" ignored="false" />
-    <file path="/fragment.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372246472063" ignored="false" />
-    <file path="/KustomWarn.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372268763635" ignored="false" />
-    <file path="/LocalStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371553116626" ignored="false" />
-    <file path="/KList.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369746947328" ignored="false" />
-    <file path="/KWarns.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371387735072" ignored="false" />
+    <file path="/plugin.yml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372608264682" ignored="false" />
+    <file path="/config.yml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372601351245" ignored="false" />
+    <file path="/KWarn.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372746932484" ignored="false" />
+    <file path="/fragment.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372608042498" ignored="false" />
+    <file path="/KustomWarn.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372747097979" ignored="false" />
+    <file path="/LocalStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372747731761" ignored="false" />
+    <file path="/KList.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372746780883" ignored="false" />
+    <file path="/KWarns.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372746111357" ignored="false" />
     <file path="/SignListener.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369755505337" ignored="false" />
     <file path="/ResetTask.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369741772364" ignored="false" />
     <file path="/a.dummy" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369758135224" ignored="false" />
@@ -40,14 +42,24 @@
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/command/CommandSender.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Server.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="/DBStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371422977671" ignored="false" />
-    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372444568832" ignored="false" />
+    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372760097450" ignored="false" />
     <file path="/SQLiteStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371512588148" ignored="false" />
     <file path="/Db.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371520367347" ignored="false" />
     <file path="/ListOff.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371557954670" ignored="false" />
     <file path="/warnings.xml" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371574866852" ignored="false" />
-    <file path="/XMLLogging.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371947992626" ignored="false" />
+    <file path="/XMLLogging.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372508779323" ignored="false" />
     <file path="/PluginUpdater.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372273091620" ignored="false" />
     <file path="/JSONLogging.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372448916234" ignored="false" />
+    <file path="/SQLite.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372479370331" ignored="false" />
+    <file path="/SQLiteLogging.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372556244353" ignored="false" />
+    <file path="/Database.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372594420320" ignored="false" />
+    <file path="/DatabaseConnector.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372599927773" ignored="false" />
+    <file path="/PersistenceInterface.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372596992265" ignored="false" />
+    <file path="/BReload.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372607850022" ignored="false" />
+    <file path="/KReload.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372609379376" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commadns/KReload.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372608034564" ignored="false" />
+    <file path="/SQLiteStorage.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372742237816" ignored="false" />
+    <file path="/TemporaryStorage.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1372739055780" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +67,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel class="me.kustomkraft.kustomwarn.commands.KList" />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -99,7 +116,38 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" line="59" class="me.kustomkraft.kustomwarn.commands.KWarn" package="me.kustomkraft.kustomwarn.commands">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java" line="33" class="me.kustomkraft.kustomwarn.commands.KWarns" package="me.kustomkraft.kustomwarn.commands">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -109,46 +157,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="17" selection-start="2182" selection-end="2182" vertical-scroll-proportion="-45.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalStore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="44" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="KWarn.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="44" selection-start="10205" selection-end="10205" vertical-scroll-proportion="0.0">
+            <state line="59" column="46" selection-start="2084" selection-end="2099" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KustomWarn.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java">
+      <file leaf-file-name="KList.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.777027">
+            <state line="16" column="11" selection-start="436" selection-end="436" vertical-scroll-proportion="-1.331058">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <file leaf-file-name="KDelete.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KDelete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="18" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0">
+            <state line="14" column="156" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KReload.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReload.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="30" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,7 +196,7 @@
       <file leaf-file-name="PluginUpdater.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="76" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,7 +205,7 @@
       <file leaf-file-name="plugin.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="96" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
+            <state line="4" column="35" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -175,7 +214,34 @@
       <file leaf-file-name="KWarns.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="103" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0">
+            <state line="32" column="47" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="21" selection-start="4034" selection-end="4034" vertical-scroll-proportion="-23.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalStore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="20" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KustomWarn.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="8" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -199,22 +265,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KDelete.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/DBStore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/SQLiteStore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/Db.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/ListOff.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/warnings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/XMLLogging.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PersistenceInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/DatabaseConnector.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/BReload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commadns/KReload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReload.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/TemporaryStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/SQLiteStorage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/JSONLogging.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/SQLiteLogging.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -249,10 +315,6 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="Plugins" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="compiler" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -303,7 +365,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -318,6 +380,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -328,46 +392,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Kustom Warn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.jdom:jdom:2.0.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jdom-2.0.2.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jdom2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Kustom Warn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.jdom:jdom:2.0.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jdom-2.0.2.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -490,8 +514,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -503,26 +525,29 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="MavenSettings" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sqlite-jdbc-3.7.2.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SQLibrary.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="gradle.tool.window.active" value="Project" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="me.kustomkraft.kustomwarn.commands" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="me.kustomkraft.kustomwarn.commands" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.kustomkraft.kustomwarn.commands" />
+      <recent name="me.kustomkraft.kustomwarn.commadns" />
       <recent name="me.kustomkraft.kustomwarn.tasks" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -682,7 +707,11 @@
       <created>1371352982876</created>
       <updated>1371352982876</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added automatic update checker">
+      <created>1372451308704</created>
+      <updated>1372451308704</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -707,26 +736,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1058" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32785088" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6925602" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6925602" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2534685" sideWeight="0.8116101" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2534685" sideWeight="0.6925602" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10032017" sideWeight="0.78571427" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2986111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37353256" sideWeight="0.6925602" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30743983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2138158" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -773,7 +802,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added datbase method using bukkit tools" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added automatic update checker" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -788,6 +817,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Added datbase method using bukkit tools" />
+    <MESSAGE value="Added automatic update checker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -797,9 +827,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Warnings.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="8" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="8" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Warning.java">
@@ -812,9 +849,33 @@
         <state line="37" column="47" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.76242423" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
+        <state line="16" column="13" selection-start="564" selection-end="564" vertical-scroll-proportion="0.3153745" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Warnings.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="8" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="20" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="30" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -826,72 +887,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/ListOff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="59" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/LocalStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="44" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="96" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="103" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/warnings.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="44" selection-start="10205" selection-end="10205" vertical-scroll-proportion="0.0">
+        <state line="4" column="35" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/PluginUpdater.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="76" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
+        <state line="59" column="46" selection-start="2084" selection-end="2099" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarns.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="17" selection-start="2182" selection-end="2182" vertical-scroll-proportion="-45.0">
+        <state line="113" column="21" selection-start="4034" selection-end="4034" vertical-scroll-proportion="-23.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="1" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.777027">
+        <state line="16" column="11" selection-start="436" selection-end="436" vertical-scroll-proportion="-1.331058">
           <folding />
         </state>
       </provider>
@@ -972,7 +1005,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.oracle:ojdbc14:LATEST</last-edited>
+          <last-edited>SQLibrary</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

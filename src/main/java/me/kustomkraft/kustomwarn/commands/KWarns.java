@@ -1,12 +1,15 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
+import me.kustomkraft.kustomwarn.utils.LocalStore;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.List;
 
 public class KWarns implements CommandExecutor {
 
@@ -27,11 +30,15 @@ public class KWarns implements CommandExecutor {
             } else {
                 Player player = (Player) sender;
                 if (args.length == 0){
-                    if (plugin.warnedPlayers.getWarnings(player.getName()) == 0) {
-                        player.sendMessage(prefix + ChatColor.BLUE + "You have not received any warnings!");
+                    List warningsList = plugin.getCustomConfiguration().getStringList(player.getName() + ".warnings");
+                    if (plugin.warnedPlayers.getWarningTotal(player.getName()) != 0) {
+                        for (Object s : warningsList) {
+                            player.sendMessage(prefix + ChatColor.RED + s);
+                        }
                         return true;
                     } else {
-                        player.sendMessage(prefix + ChatColor.RED + "You have received " + plugin.warnedPlayers.getWarnings(player.getName()) + " warning(s)");
+                        player.sendMessage(prefix + ChatColor.YELLOW + "You don't have any warnings to view");
+                        return true;
                     }
                 } else {
                     player.sendMessage(prefix + ChatColor.RED + "Too many arguments!");

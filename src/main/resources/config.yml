@@ -11,5 +11,7 @@ Kick Message: Please read the /rules!
 Ban Message: You have been banned for having too many warnings!
 # Should Remaining Warnings Be Displayed?
 Show Remaining: True
-Auto Download: True
 Auto Update: True
+# Player Information
+# Should players be informed that this server is protected by Kustom Warn
+Alert Players: True

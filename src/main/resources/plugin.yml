@@ -3,7 +3,6 @@ main: ${project.groupId}.${project.artifactId}.${project.name}
 version: ${project.version}
 author: ${project.author}
 description: ${project.description}
-database: true
 commands:
     kwarn:
         usage: /<command> (player) [reason]
@@ -25,6 +24,6 @@ commands:
         description: Delete a players warning(s)
         permission: kustomwarn.delete
         default: op
-    blist:
+    kreload:
         usage: /<command>
-        description: Development command (if here in release please leave a post to let me know)
+        description: Currently shows the senders name

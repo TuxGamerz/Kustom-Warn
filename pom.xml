@@ -6,7 +6,7 @@
 
     <groupId>me.kustomkraft</groupId>
     <artifactId>kustomwarn</artifactId>
-    <version>0.2</version>
+    <version>0.06</version>
     <name>KustomWarn</name>
     <description>Warn players that are breaking the rules. With customisable messages.</description>
     <contributors>
@@ -17,6 +17,14 @@
         </contributor>
     </contributors>
     <packaging>jar</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>plugin-repo</id>
+            <name>repo.stronghearttarot.com</name>
+            <url>http://www.stronghearttarrot.com/www/repo</url>
+        </repository>
+    </distributionManagement>
 
     <repositories>
 
@@ -37,7 +45,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.5.2-R1.1-SNAPSHOT</version>
+            <version>1.6.1-R0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -45,12 +53,6 @@
             <artifactId>metrics</artifactId>
             <version>R6</version>
             <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>jdom</artifactId>
-            <version>LATEST</version>
         </dependency>
 
     </dependencies>
@@ -76,9 +78,38 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                     <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.0-beta-3</version>
+                <configuration>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>jxr-maven-plugin</artifactId>
+                            <version>2.0-beta-1</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.7</version>
+                            <configuration>
+                                <linksource>true</linksource>
+                            </configuration>
+                            <reportSets>
+                                <reportSet>
+                                    <reports>
+                                        <report>javadoc</report>
+                                    </reports>
+                                </reportSet>
+                            </reportSets>
+                        </plugin>
+                    </reportPlugins>
                 </configuration>
             </plugin>
         </plugins>

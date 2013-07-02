@@ -65,24 +65,4 @@ public class PluginUpdater {
         return this.versionLink;
     }
 
-    public void getFile (String url) {
-        try{
-            String localfile = plugin.getDataFolder().getAbsolutePath();
-            BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());
-            String fileName = plugin.getDataFolder().getAbsolutePath() + File.separatorChar;
-            FileOutputStream fileOutputStream = new FileOutputStream(fileName + "Kustom-Warn.jar");
-            BufferedOutputStream outputStream = new BufferedOutputStream(fileOutputStream,1024);
-            byte data[] = new byte[1024];
-            logger.severe(fileName);
-            while(in.read(data,0,1024)>=0)
-            {
-                outputStream.write(data);
-            }
-            outputStream.close();
-            in.close();
-            //Files.copy(new URL("http://host/site/filename").openStream(), Paths.get(localfile));
-        }catch (Exception e){
-            logger.severe("Error: " + e.getMessage());
-        }
-    }
 }

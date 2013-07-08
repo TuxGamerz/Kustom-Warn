@@ -21,8 +21,8 @@ import java.util.logging.Logger;
 public class KustomWarn extends JavaPlugin {
 
     private Logger logger = Bukkit.getLogger();
-    private FileConfiguration customConfiguration = null;
-    private File customConfigurationFile = null;
+    private FileConfiguration customConfiguration;
+    private File customConfigurationFile;
 
     public LocalStore warnedPlayers;
 

@@ -13,8 +13,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class LocalStore{
 
-    private FileConfiguration customConfiguration = null;
-    private File customConfigurationFile = null;
+    private FileConfiguration customConfiguration;
+    private File customConfigurationFile;
     private KustomWarn plugin;
     private KWarn kWarn;
     private Logger logger = Bukkit.getLogger();
@@ -25,24 +25,20 @@ public class LocalStore{
     }
 
     public int getWarningTotal(String playerName) {
-        int warnings = warningsList.size();
-        return warnings;
+        warningsList.size();
+        return warningsList.size();
     }
 
     public void  addWarning(String playerName, String adminName, String date) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("By " + adminName + date);
-        warningsList = plugin.getCustomConfiguration().getStringList(kWarn.offenderName + ".warnings");
-        plugin.getCustomConfiguration().set(playerName + ".warnings", warningsList);
-        warningsList.clear();
+        plugin.getCustomConfiguration().set(playerName + ".warnings", stringBuilder);
     }
 
     public void addWarningReason(String playerName, String adminName, String warningReason, String date) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("By " + adminName + " for " + warningReason + date);
-        warningsList = plugin.getCustomConfiguration().getStringList(kWarn.offenderName + ".warnings");
-        plugin.getCustomConfiguration().set(playerName + ".warnings", warningsList);
-        warningsList.clear();
+        plugin.getCustomConfiguration().set(playerName + ".warnings", stringBuilder);
     }
 
     public void removeWarning() {

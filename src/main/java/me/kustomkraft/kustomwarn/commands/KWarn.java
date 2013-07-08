@@ -53,23 +53,23 @@ public class KWarn implements CommandExecutor {
             playerName = args[0];
         }
         Server server = plugin.getServer();
-        Player targetPlayer = plugin.getServer().getPlayer(playerName);
-        String warningTotal;
-        if (targetPlayer != null){
+        //Player targetPlayer = plugin.getServer().getPlayer(playerName);
+        //String warningTotal;
+        /*if (targetPlayer != null){
             offenderName = targetPlayer.getName();
             if (warningPlayers.getWarningTotal(targetPlayer.getName()) == 0){
                 warningTotal = String.valueOf(0);
             } else {
                 warningTotal = String.valueOf(warningPlayers.getWarningTotal(targetPlayer.getName()));
             }
-        } else if (targetPlayer.hasPlayedBefore() && server.getOfflinePlayer(targetPlayer.getName()) != null) {
+        } else if (targetPlayer.getLastPlayed() != 0 && server.getOfflinePlayer(targetPlayer.getName()) != null) {
             offenderName = targetPlayer.getName();
             sender.sendMessage(prefix + ChatColor.RED + targetPlayer.getName() + " is not online!");
             return true;
         }else {
             sender.sendMessage(prefix + ChatColor.RED + "Player not found!");
             return true;
-        }
+        } */
         for (int i = 1; i < args.length; i++) {
             reason += args[i] + " ";
         }
@@ -80,16 +80,18 @@ public class KWarn implements CommandExecutor {
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Usage: /kwarn [player] (reason)");
                     return true;
                 } else if (args.length == 1) {
+                    Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
                     if (targetPlayer != null) {
+                        offenderName = targetPlayer.getName();
                         if (plugin.getConfig().getBoolean("Alert Admins")) {
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned by a console user!");
                             targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
                             consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + String.valueOf(plugin.warnedPlayers.getWarningTotal(targetPlayer.getName())) + " time(s)!");
-                            if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                            /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                //consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + " time(s)!");
                                 return true;
-                            }
+                            }*/
                             adminName = "Console User";
                             warningPlayers.addWarning(targetPlayer.getName(), adminName, getDate());
                             plugin.saveCustomConfiguration();
@@ -98,11 +100,11 @@ public class KWarn implements CommandExecutor {
                         } else {
                             consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + String.valueOf(plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) + 1) + " time(s)!");
                             targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
-                            if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                            /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                //consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
                                 return true;
-                            }
+                            }*/
                             adminName = "Console User";
                             warningPlayers.addWarning(targetPlayer.getName(), adminName, getDate());
                             plugin.saveCustomConfiguration();
@@ -114,16 +116,18 @@ public class KWarn implements CommandExecutor {
                         return true;
                     }
                 } else if (args.length >= 2) {
+                    Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
                     if (targetPlayer != null) {
+                        offenderName = targetPlayer.getName();
                         if (plugin.getConfig().getBoolean("Alert Admins")) {
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned by a console user for " + reason);
                             targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
                             consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + String.valueOf(plugin.warnedPlayers.getWarningTotal(targetPlayer.getName())) + " time(s)");
-                            if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                            /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                //consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
                                 return true;
-                            }
+                            } */
                             adminName = "Console User";
                             warningPlayers.addWarningReason(targetPlayer.getName(), adminName, reason,getDate());
                             plugin.saveCustomConfiguration();
@@ -132,11 +136,11 @@ public class KWarn implements CommandExecutor {
                         } else {
                             targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
                             consoleSender.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + String.valueOf(plugin.warnedPlayers.getWarningTotal(targetPlayer.getName())) + " time(s)");
-                            if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                            /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                //consoleSender.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
                                 return true;
-                            }
+                            }*/
                             adminName = "Console User";
                             warningPlayers.addWarningReason(targetPlayer.getName(), adminName, reason,getDate());
                             plugin.saveCustomConfiguration();
@@ -156,16 +160,18 @@ public class KWarn implements CommandExecutor {
                         player.sendMessage(prefix + ChatColor.RED + "Usage: /kwarn [player] (reason)");
                         return true;
                     } else if (args.length == 1) {
+                        Player targetPlayer = player.getServer().getPlayer(args[0]);
                         if (targetPlayer != null) {
+                            offenderName = targetPlayer.getName();
                             if (plugin.getConfig().getBoolean("Alert Admins")) {
                                 Command.broadcastCommandMessage(consoleSender, prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned by " + player.getName());
                                 targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning"));
                                 player.sendMessage(prefix + ChatColor.YELLOW + "Player has been warned");
-                                if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                    player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                    targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
-                                    return true;
-                                }
+                                //if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                    //player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                    //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                                    //return true;
+                                //}
                                 adminName = player.getName();
                                 warningPlayers.addWarning(targetPlayer.getName(), adminName, getDate());
                                 plugin.saveCustomConfiguration();
@@ -184,33 +190,35 @@ public class KWarn implements CommandExecutor {
                             return true;
                         }
                     } else if (args.length >= 2) {
+                        Player targetPlayer = player.getServer().getPlayer(args[0]);
                         if (targetPlayer != null) {
+                            offenderName = targetPlayer.getName();
                             if (plugin.getConfig().getBoolean("Alert Admins")) {
                                 Command.broadcastCommandMessage(consoleSender, prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned by " + player.getName() + " for " + reason);
                                 targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
                                 player.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) + 1) + " time(s)!");
-                                if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                    player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                    targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                                /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                    //player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                    //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
                                     adminName = player.getName();
                                     warningPlayers.addWarningReason(targetPlayer.getName(), adminName, reason,getDate());
                                     plugin.saveCustomConfiguration();
                                     plugin.reloadCustomConfiguration();
                                     return true;
-                                }
+                                }*/
                                 return true;
                             } else {
                                 targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
                                 player.sendMessage(prefix + ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + (plugin.warnedPlayers.getWarningTotal(targetPlayer.getName()) + 1) + " time(s)!");
-                                if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
-                                    player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
-                                    targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
+                                /*if (warningPlayers.getWarningTotal(targetPlayer.getName()) != 0){
+                                    //player.sendMessage(prefix +ChatColor.YELLOW + targetPlayer.getName() + " has been warned " + warningTotal + " time(s)!");
+                                    //targetPlayer.sendMessage(prefix + ChatColor.RED + "You have been warned " + warningTotal + " time(s)!");
                                     adminName = player.getName();
                                     warningPlayers.addWarningReason(targetPlayer.getName(), adminName, reason,getDate());
                                     plugin.saveCustomConfiguration();
                                     plugin.reloadCustomConfiguration();
                                     return true;
-                                }
+                                }*/
                                 return true;
                             }
                         } else {

@@ -1,20 +1,17 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import java.util.logging.Logger;
-
 public class KReload implements CommandExecutor {
 
     private KustomWarn plugin;
 
-    public KReload(KustomWarn plugin) {
-        this.plugin = plugin;
+    public KReload(KustomWarn instance) {
+        this.plugin = instance;
     }
 
     @Override

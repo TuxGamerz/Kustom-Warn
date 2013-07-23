@@ -1,7 +1,7 @@
 # Should Admins Be Alerted When Someone Is Warned? (true/false)
 Alert Admins: True
 # Customisable Messages
-Warning: You have been warned please follow the /rules
+Warning Message: You have been warned please follow the /rules
 Warning For: You have been warned for
 # Warnings Before Event
 Kick After: 3

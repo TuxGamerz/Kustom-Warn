@@ -1,7 +1,7 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.utils.LocalStore;
+import me.kustomkraft.kustomwarn.utils.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,10 +15,10 @@ public class KWarns implements CommandExecutor {
 
     private KustomWarn plugin;
 
-    public KWarns(KustomWarn plugin) {
-        this.plugin = plugin;
+    public KWarns(KustomWarn instance) {
+        plugin = instance;
     }
-    //TODO once the dbstore class is working implement it here for a player to list their own  warnings
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         ConsoleCommandSender consoleSender = sender.getServer().getConsoleSender();
@@ -30,11 +30,14 @@ public class KWarns implements CommandExecutor {
             } else {
                 Player player = (Player) sender;
                 if (args.length == 0){
-                    List warningsList = plugin.getCustomConfiguration().getStringList(player.getName() + ".warnings");
-                    if (plugin.warnedPlayers.getWarningTotal(player.getName()) != 0) {
-                        for (Object s : warningsList) {
-                            player.sendMessage(prefix + ChatColor.RED + s);
+                    List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", player.getName()).findList();
+                    if (warnings != null){
+                        player.sendMessage(ChatColor.AQUA + "===============" + ChatColor.YELLOW + " Kustom Warn " + ChatColor.AQUA + "===============");
+                        for (Object s: warnings)
+                        {
+                            player.sendMessage(ChatColor.YELLOW + String.valueOf(s));
                         }
+                        player.sendMessage(ChatColor.AQUA + "===========================================");
                         return true;
                     } else {
                         player.sendMessage(prefix + ChatColor.YELLOW + "You don't have any warnings to view");

@@ -1,48 +1,66 @@
 package me.kustomkraft.kustomwarn.utils;
 
-import java.io.File;
+import com.avaje.ebean.validation.NotNull;
 
-import java.util.List;
-import java.util.logging.Logger;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.commands.KWarn;
+@Entity()
+@Table(name = "kustom_warn")
+public class LocalStore {
 
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
+    @Id
+    private int id;
 
-public class LocalStore{
+    @NotNull
+    private String warningNumber;
 
-    private FileConfiguration customConfiguration;
-    private File customConfigurationFile;
-    private KustomWarn plugin;
-    private KWarn kWarn;
-    private Logger logger = Bukkit.getLogger();
-    private List warningsList;
+    @NotNull
+    private String playerName;
 
-    public LocalStore(KustomWarn plugin) {
-        this.plugin = plugin;
+    @NotNull
+    private String adminName;
+
+    private String warningReason;
+
+    public int getId() {
+        return id;
     }
 
-    public int getWarningTotal(String playerName) {
-        warningsList.size();
-        return warningsList.size();
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void  addWarning(String playerName, String adminName, String date) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("By " + adminName + date);
-        plugin.getCustomConfiguration().set(playerName + ".warnings", stringBuilder);
+    public String getWarningNumber(){
+        return warningNumber;
     }
 
-    public void addWarningReason(String playerName, String adminName, String warningReason, String date) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("By " + adminName + " for " + warningReason + date);
-        plugin.getCustomConfiguration().set(playerName + ".warnings", stringBuilder);
+    public void setWarningNumber(String warningNumber){
+        this.warningNumber = warningNumber;
     }
 
-    public void removeWarning() {
-
+    public String getPlayerName() {
+        return playerName;
     }
 
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
+    }
+
+    public String getWarningReason() {
+        return warningReason;
+    }
+
+    public void setWarningReason(String warningReason) {
+        this.warningReason = warningReason;
+    }
 }

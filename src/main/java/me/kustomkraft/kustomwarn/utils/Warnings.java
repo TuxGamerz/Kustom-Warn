@@ -8,7 +8,9 @@ import javax.persistence.Table;
 
 @Entity()
 @Table(name = "kustom_warn")
-public class LocalStore {
+@SuppressWarnings("unused")
+public class Warnings
+{
 
     @Id
     private int id;
@@ -24,43 +26,53 @@ public class LocalStore {
 
     private String warningReason;
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getWarningNumber(){
+    public String getWarningNumber()
+    {
         return warningNumber;
     }
 
-    public void setWarningNumber(String warningNumber){
+    public void setWarningNumber(String warningNumber)
+    {
         this.warningNumber = warningNumber;
     }
 
-    public String getPlayerName() {
+    public String getPlayerName()
+    {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
+    public void setPlayerName(String playerName)
+    {
         this.playerName = playerName;
     }
 
-    public String getAdminName() {
+    public String getAdminName()
+    {
         return adminName;
     }
 
-    public void setAdminName(String adminName) {
+    public void setAdminName(String adminName)
+    {
         this.adminName = adminName;
     }
 
-    public String getWarningReason() {
+    public String getWarningReason()
+    {
         return warningReason;
     }
 
-    public void setWarningReason(String warningReason) {
+    public void setWarningReason(String warningReason)
+    {
         this.warningReason = warningReason;
     }
 }

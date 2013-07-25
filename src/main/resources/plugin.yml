@@ -6,25 +6,27 @@ author: ${project.author}
 description: ${project.description}
 commands:
     kwarn:
-        usage: /<command> (player) [reason]
-        description: Used to warn the player
+        usage: /<command> [player] (reason)
+        description: Used to warn the player, reason is optional
         permission: kustomwarn.warn
         default: op
     klist:
-        usage: /<command> (player)
+        usage: /<command> [player]
         description: List another players warnings
-        permission: kustomwarn.other
+        permission: kustomwarn.list
         default: op
     kwarns:
         usage: /<command>
         description: List your warnings
-        permission: kustomwarn.mine
+        permission: kustomwarn.listself
         default: true
     kdelete:
-        usage: /<command> all/(index number) [player]
+        usage: /<command> [player] [warning-number]
         description: Delete a players warning(s)
         permission: kustomwarn.delete
         default: op
     kreload:
         usage: /<command>
-        description: Currently shows the senders name
+        description: Reloads the plugin configuration file (config.yml)
+        permission: kustomwarn.reload
+        default: op

@@ -6,7 +6,7 @@
 
     <groupId>me.kustomkraft</groupId>
     <artifactId>kustomwarn</artifactId>
-    <version>0.06</version>
+    <version>0.04</version>
     <name>KustomWarn</name>
     <description>Warn players that are breaking the rules. With customisable messages.</description>
     <contributors>
@@ -17,14 +17,6 @@
         </contributor>
     </contributors>
     <packaging>jar</packaging>
-
-    <distributionManagement>
-        <repository>
-            <id>plugin-repo</id>
-            <name>repo.stronghearttarot.com</name>
-            <url>http://www.stronghearttarrot.com/www/repo</url>
-        </repository>
-    </distributionManagement>
 
     <repositories>
 
@@ -46,13 +38,6 @@
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
             <version>1.6.2-R0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mcstats.bukkit</groupId>
-            <artifactId>metrics</artifactId>
-            <version>R6</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>

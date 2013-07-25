@@ -2,7 +2,7 @@ package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
 
-import me.kustomkraft.kustomwarn.utils.LocalStore;
+import me.kustomkraft.kustomwarn.utils.Warnings;
 
 import org.bukkit.ChatColor;
 
@@ -50,7 +50,7 @@ public class KWarn implements CommandExecutor
                     Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
                     if (targetPlayer != null)
                     {
-                        List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
+                        List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).findList();
                         if (plugin.getConfig().getBoolean("Alert Admins"))
                         {
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
@@ -64,10 +64,10 @@ public class KWarn implements CommandExecutor
                             consoleSender.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
                         }
                         targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
-                        LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
+                        Warnings warning = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
                         if (warnings.size() < plugin.getConfig().getInt("Ban After"))
                         {
-                            warning = new LocalStore();
+                            warning = new Warnings();
                             warning.setWarningNumber(String.valueOf(warnings.size() + 1));
                             warning.setPlayerName(targetPlayer.getName());
                             warning.setAdminName("console user");
@@ -86,10 +86,10 @@ public class KWarn implements CommandExecutor
                     Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
                     if (targetPlayer != null)
                     {
-                        List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
+                        List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).findList();
                         if (plugin.getConfig().getBoolean("Alert Admins"))
                         {
-                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user for " + reason);
                         }
                         if(warnings.size() != 0)
                         {
@@ -99,11 +99,11 @@ public class KWarn implements CommandExecutor
                         {
                             consoleSender.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
                         }
-                        targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
-                        LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
+                        targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
+                        Warnings warning = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
                         if (warnings.size() < plugin.getConfig().getInt("Ban After"))
                         {
-                            warning = new LocalStore();
+                            warning = new Warnings();
                             warning.setWarningNumber(String.valueOf(warnings.size() + 1));
                             warning.setPlayerName(targetPlayer.getName());
                             warning.setAdminName("console user");
@@ -129,7 +129,7 @@ public class KWarn implements CommandExecutor
                     {
                         Player targetPlayer = player.getServer().getPlayer(args[0]);
                         if (targetPlayer != null) {
-                            List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
+                            List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).findList();
                             if (plugin.getConfig().getBoolean("Alert Admins"))
                             {
                                 Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by " + player.getName());
@@ -143,10 +143,10 @@ public class KWarn implements CommandExecutor
                                 player.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
                             }
                             targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
-                            LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
+                            Warnings warning = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
                             if (warnings.size() < plugin.getConfig().getInt("Ban After"))
                             {
-                                warning = new LocalStore();
+                                warning = new Warnings();
                                 warning.setWarningNumber(String.valueOf(warnings.size() + 1));
                                 warning.setPlayerName(targetPlayer.getName());
                                 warning.setAdminName(player.getName());
@@ -162,13 +162,13 @@ public class KWarn implements CommandExecutor
                     }
                     else if (args.length >= 2)
                     {
-                        Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
+                        Player targetPlayer = player.getServer().getPlayer(args[0]);
                         if (targetPlayer != null)
                         {
-                            List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
+                            List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).findList();
                             if (plugin.getConfig().getBoolean("Alert Admins"))
                             {
-                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by " + player.getName());
+                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by " + player.getName() + " for " + reason);
                             }
                             if(warnings.size() != 0)
                             {
@@ -178,11 +178,11 @@ public class KWarn implements CommandExecutor
                             {
                                 player.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
                             }
-                            targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning Message"));
-                            LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
+                            targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
+                            Warnings warning = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
                             if (warnings.size() < plugin.getConfig().getInt("Ban After"))
                             {
-                                warning = new LocalStore();
+                                warning = new Warnings();
                                 warning.setWarningNumber(String.valueOf(warnings.size() + 1));
                                 warning.setPlayerName(targetPlayer.getName());
                                 warning.setAdminName(player.getName());

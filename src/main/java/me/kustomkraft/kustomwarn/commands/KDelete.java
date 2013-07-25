@@ -1,7 +1,7 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.utils.LocalStore;
+import me.kustomkraft.kustomwarn.utils.Warnings;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,6 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.List;
 
 public class KDelete implements CommandExecutor {
 
@@ -35,16 +37,19 @@ public class KDelete implements CommandExecutor {
                 }
                 else
                 {
-                    Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
-                    if (targetPlayer != null)
+                    List<Warnings> warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", args[0]).findList();
+                    if (!warnings.isEmpty())
                     {
-                        LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(args[1])).findUnique();
-                        if (warning != null)
+                        for (Warnings warning : warnings)
                         {
-                            plugin.getDatabase().delete(warning);
+                            if (warning.getWarningNumber().equals(String.valueOf(args[1])))
+                            {
+                                plugin.getDatabase().delete(warning);
+                            }
                         }
-                        return true;
                     }
+                    consoleSender.sendMessage(prefix + ChatColor.GREEN + "Warning " + String.valueOf(args[1]) + " for " + args[0] + " has been deleted!");
+                    return true;
                 }
             }
             else
@@ -58,16 +63,19 @@ public class KDelete implements CommandExecutor {
                 }
                 else
                 {
-                    Player targetPlayer = player.getServer().getPlayer(args[0]);
-                    if (targetPlayer != null)
+                    List<Warnings> warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", args[0]).findList();
+                    if (!warnings.isEmpty())
                     {
-                        LocalStore warning = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(args[1])).findUnique();
-                        if (warning != null)
+                        for (Warnings warning : warnings)
                         {
-                            plugin.getDatabase().delete(warning);
+                            if (warning.getWarningNumber().equals(String.valueOf(args[1])))
+                            {
+                                plugin.getDatabase().delete(warning);
+                            }
                         }
-                        return true;
+                        consoleSender.sendMessage(prefix + ChatColor.GREEN + "Warning " + String.valueOf(args[1]) + " for " + args[0] + " has been deleted!");
                     }
+                    return true;
                 }
             }
         }

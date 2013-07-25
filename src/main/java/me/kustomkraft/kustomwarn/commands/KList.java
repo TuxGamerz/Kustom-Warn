@@ -1,7 +1,7 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.utils.LocalStore;
+import me.kustomkraft.kustomwarn.utils.Warnings;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,77 +19,60 @@ public class KList implements CommandExecutor {
         plugin = instance;
     }
 
+
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args)
     {
         ConsoleCommandSender consoleSender = sender.getServer().getConsoleSender();
         String prefix = (ChatColor.BOLD + (ChatColor.BLUE + "[")) + (ChatColor.RESET + (ChatColor.YELLOW + "Kustom Warn")) + (ChatColor.BOLD + (ChatColor.BLUE + "]")) + ChatColor.RESET;
+        String bannerUpper = ChatColor.AQUA +  "================" + ChatColor.YELLOW + " Kustom Warn " + ChatColor.AQUA + "===============";
+        String bannerLower = ChatColor.AQUA +  "============================================";
         if (commandLabel.equalsIgnoreCase("klist"))
         {
             if (!(sender instanceof Player))
             {
-                if (args.length == 0)
-                {
-                    consoleSender.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
-                    consoleSender.sendMessage(prefix + ChatColor.RED + "Usage: /klist [player]");
-                    return true;
-                }
-                else
-                {
-                    if (consoleSender.hasPermission("kustomwarn.other") || consoleSender.isOp())
-                    {
-                        Player targetPlayer = consoleSender.getServer().getPlayer(args[0]);
-                        List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
-                        if (warnings != null)
-                        {
-                            consoleSender.sendMessage(ChatColor.AQUA + "===============" + ChatColor.YELLOW + " Kustom Warn " + ChatColor.AQUA + "===============");
-                            consoleSender.sendMessage(ChatColor.YELLOW + "Viewing " + targetPlayer.getName() + "'s warnings");
-                            for (Object s: warnings)
-                            {
-                                consoleSender.sendMessage(ChatColor.YELLOW + String.valueOf(s));
-                            }
-                            consoleSender.sendMessage(ChatColor.AQUA + "===========================================");
-                            return true;
-                        }
-                        else
-                        {
-                            consoleSender.sendMessage(prefix + ChatColor.GREEN + targetPlayer.getName() + " doesn't have any warnings to view");
-                            return true;
-                        }
-                    }
-                }
+                consoleSender.sendMessage(prefix + ChatColor.RED + "This command can only be used by a player!");
+                return true;
             }
             else
             {
                 Player player = (Player) sender;
-                if (args.length == 0)
+                if (player.hasPermission("kustomwarn.listself"))
                 {
-                    player.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
-                    player.sendMessage(prefix + ChatColor.RED + "Usage: /klist [player]");
-                    return true;
-                }
-                else
-                {
-                    if (player.hasPermission("kustomwarn.other") || player.isOp())
+                    if (args.length == 0)
                     {
-                        Player targetPlayer = player.getServer().getPlayer(args[0]);
-                        List warnings = plugin.getDatabase().find(LocalStore.class).where().ieq("playerName", targetPlayer.getName()).findList();
-                        if (warnings != null)
+                        List<Warnings> warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", player.getName()).findList();
+                        if (!warnings.isEmpty())
                         {
-                            player.sendMessage(ChatColor.AQUA + "===============" + ChatColor.YELLOW + " Kustom Warn " + ChatColor.AQUA + "===============");
-                            player.sendMessage(ChatColor.YELLOW + "Viewing " + targetPlayer.getName() + "'s warnings");
-                            for (Object s: warnings)
+                            player.sendMessage(bannerUpper);
+                            for (Warnings warning : warnings)
                             {
-                                player.sendMessage(ChatColor.YELLOW + String.valueOf(s));
+                                String warningReason;
+                                if (warning.getWarningReason() == null)
+                                {
+                                    warningReason = "Not Supplied";
+                                }
+                                else
+                                {
+                                    warningReason = warning.getWarningReason();
+                                }
+                                player.sendMessage(ChatColor.AQUA + warning.getWarningNumber() + " | Reason: " + warningReason + " | Admin: " + warning.getAdminName());
                             }
-                            player.sendMessage(ChatColor.AQUA + "===========================================");
+                            player.sendMessage(bannerLower);
                             return true;
                         }
                         else
                         {
-                            player.sendMessage(prefix + ChatColor.GREEN + targetPlayer.getName() + " doesn't have any warnings to view!");
+                            player.sendMessage(prefix + ChatColor.YELLOW + "You don't have any warnings to view");
                             return true;
                         }
+                    }
+                    else
+                    {
+                        player.sendMessage(prefix + ChatColor.RED + "Too many arguments!");
+                        player.sendMessage(prefix + ChatColor.RED + "Usage: /klist");
+                        return true;
                     }
                 }
             }

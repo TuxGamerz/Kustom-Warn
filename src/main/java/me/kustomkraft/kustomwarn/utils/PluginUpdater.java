@@ -7,10 +7,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -43,10 +39,11 @@ public class PluginUpdater {
             Node latestVersion = document.getElementsByTagName("item").item(0);
             NodeList subNodes = latestVersion.getChildNodes();
 
-            this.version = subNodes.item(1).getTextContent().replaceAll("[a-zA-Z ]", "");
-            this.versionLink = subNodes.item(3).getTextContent();
-            logger.info(this.version + " " + versionLink);
-            if (!plugin.getDescription().getVersion().equals(this.version)){
+            version = subNodes.item(1).getTextContent().replaceAll("[a-zA-Z ]", "");
+            versionLink = subNodes.item(3).getTextContent();
+            double pluginVersion = Double.valueOf(plugin.getDescription().getVersion());
+            double webVersion = Double.valueOf(version);
+            if (webVersion > pluginVersion){
                 return true;
             }
 

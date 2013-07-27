@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31e28896-47e0-462c-9aec-5bd170fd17fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Kustom Warn.iws" />
@@ -25,7 +24,7 @@
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/command/CommandSender.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Server.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="/DBStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371422977671" ignored="false" />
-    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1374924550510" ignored="false" />
+    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1374926544086" ignored="false" />
     <file path="/SQLiteStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371512588148" ignored="false" />
     <file path="/Db.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371520367347" ignored="false" />
     <file path="/ListOff.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371557954670" ignored="false" />
@@ -672,7 +671,11 @@
       <created>1374924574765</created>
       <updated>1374924574765</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modified README">
+      <created>1374926545224</created>
+      <updated>1374926545224</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -763,7 +766,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added KReset command, non functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified README" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -783,6 +786,7 @@
     <MESSAGE value="Finished changeing most classes" />
     <MESSAGE value="Removed metrics responsibility from maven for now. Replaced it with metrics class file from site" />
     <MESSAGE value="Added KReset command, non functional" />
+    <MESSAGE value="Modified README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

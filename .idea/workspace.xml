@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31e28896-47e0-462c-9aec-5bd170fd17fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReset.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_kitteh_tagapi_3_0_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mcstats_bukkit_metrics_R7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/listeners/PlayerAlert.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/utils/Metrics.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kustom Warn.iml" afterPath="$PROJECT_DIR$/Kustom Warn.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" afterPath="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Kustom Warn.iws" />
@@ -32,7 +25,7 @@
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/command/CommandSender.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.5.2-R0.2-SNAPSHOT/bukkit-1.5.2-R0.2-SNAPSHOT-sources.jar!/org/bukkit/Server.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1369844399403" ignored="false" />
     <file path="/DBStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371422977671" ignored="false" />
-    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1374923376031" ignored="false" />
+    <file path="/Dummy.txt" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1374924550510" ignored="false" />
     <file path="/SQLiteStore.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371512588148" ignored="false" />
     <file path="/Db.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371520367347" ignored="false" />
     <file path="/ListOff.java" changelist="31e28896-47e0-462c-9aec-5bd170fd17fd" time="1371557954670" ignored="false" />
@@ -138,7 +131,7 @@
       <file leaf-file-name="KWarn.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="193" selection-start="763" selection-end="949" vertical-scroll-proportion="0.0">
+            <state line="30" column="83" selection-start="763" selection-end="949" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -183,13 +176,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KReset.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="KReset.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReset.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="18" selection-start="63" selection-end="63" vertical-scroll-proportion="0.037082817">
+            <state line="23" column="13" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="66" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.6315789">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -221,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KList.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KDelete.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
@@ -237,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/listeners/PlayerAlert.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/KustomWarn.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReset.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -666,7 +668,11 @@
       <created>1374567195998</created>
       <updated>1374567195998</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added KReset command, non functional">
+      <created>1374924574765</created>
+      <updated>1374924574765</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -696,21 +702,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32785088" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.52622676" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06808036" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23489933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492163" sideWeight="0.52622676" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47377327" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21222411" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25054112" sideWeight="0.93191963" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18722944" sideWeight="0.93191963" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18722944" sideWeight="0.76510066" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4733406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21222411" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991228" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -757,7 +763,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed metrics responsibility from maven for now. Replaced it with metrics class file from site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added KReset command, non functional" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -776,6 +782,7 @@
     <MESSAGE value="Complete re-write for command classes and the localstore class" />
     <MESSAGE value="Finished changeing most classes" />
     <MESSAGE value="Removed metrics responsibility from maven for now. Replaced it with metrics class file from site" />
+    <MESSAGE value="Added KReset command, non functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -842,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KWarn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="193" selection-start="763" selection-end="949" vertical-scroll-proportion="0.0">
+        <state line="30" column="83" selection-start="763" selection-end="949" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -880,10 +887,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/kustomkraft/kustomwarn/commands/KReset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="18" selection-start="63" selection-end="63" vertical-scroll-proportion="0.037082817">
+        <state line="23" column="13" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="66" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.6315789">
+          <folding />
         </state>
       </provider>
     </entry>

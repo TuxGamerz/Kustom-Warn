@@ -2,7 +2,7 @@ package me.kustomkraft.kustomwarn;
 
 //Internal imports
 import me.kustomkraft.kustomwarn.commands.*;
-import me.kustomkraft.kustomwarn.utils.Metrics;
+import me.kustomkraft.kustomwarn.listeners.PlayerAlert;
 import me.kustomkraft.kustomwarn.utils.Warnings;
 import me.kustomkraft.kustomwarn.utils.PluginUpdater;
 
@@ -13,7 +13,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.kitteh.tag.TagAPI;
+import org.mcstats.Metrics;
 
 //Standard java imports
 import javax.persistence.PersistenceException;
@@ -28,12 +31,26 @@ public class KustomWarn extends JavaPlugin {
     private Logger log = Bukkit.getLogger();
 
     protected PluginUpdater pluginUpdater;
+    public TagAPI tags;
 
     @Override
     public void onEnable()
     {
         PluginDescriptionFile pdfFile = getDescription();
         log.info(pdfFile.getName() + " Version: " + pdfFile.getVersion() + " has been enabled!");
+
+        PluginManager pm = getServer().getPluginManager();
+
+        tags = (TagAPI)pm.getPlugin("TagAPI");
+
+        if (tags == null)
+        {
+            log.info("TagAPI not found disabling support!");
+        }
+        else
+        {
+            log.info("TagAPI found enabling support!");
+        }
 
         try
         {
@@ -51,6 +68,7 @@ public class KustomWarn extends JavaPlugin {
         getCommand("kdelete").setExecutor(new KDelete(this));
         getCommand("klist").setExecutor(new KList(this));
         getCommand("kreload").setExecutor(new KReload(this));
+        getCommand("kreset").setExecutor(new KReset(this));
 
         setupDatabase();
 
@@ -66,15 +84,7 @@ public class KustomWarn extends JavaPlugin {
 
         if (getConfig().getBoolean("Alert Players"))
         {
-            getServer().getPluginManager().registerEvents(new Listener()
-            {
-                String prefix = (ChatColor.BOLD + (ChatColor.BLUE + "[")) + (ChatColor.RESET + (ChatColor.YELLOW + "Kustom Warn")) + (ChatColor.BOLD + (ChatColor.BLUE + "]")) + ChatColor.RESET;
-                @EventHandler
-                public void alertOnJoin(PlayerJoinEvent event)
-                {
-                    event.getPlayer().sendMessage(prefix + ChatColor.YELLOW + "This server is protected by Kustom Warn please follow the rules");
-                }
-            }, this);
+            pm.registerEvents(new PlayerAlert(this), this);
         }
         saveDefaultConfig();
     }

@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 
 import java.util.logging.Logger;
 
+@SuppressWarnings("unused")
 public class PlayerAlert implements Listener
 {
 

@@ -12,13 +12,13 @@ commands:
         default: op
     klist:
         usage: /<command> [player]
-        description: List another players warnings
-        permission: kustomwarn.list
+        description: List your warnings
+        permission: kustomwarn.listself
         default: op
     kwarns:
         usage: /<command>
-        description: List your warnings
-        permission: kustomwarn.listself
+        description: List another players warnings
+        permission: kustomwarn.list
         default: true
     kdelete:
         usage: /<command> [player] [warning-number]
@@ -29,4 +29,9 @@ commands:
         usage: /<command>
         description: Reloads the plugin configuration file (config.yml)
         permission: kustomwarn.reload
+        default: op
+    kreset:
+        usage: /<command> [player]
+        description: Allows you to reset a players warnings to zero
+        permission: kustomwarn.reset
         default: op

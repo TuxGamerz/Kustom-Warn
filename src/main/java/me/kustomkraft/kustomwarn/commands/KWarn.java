@@ -1,17 +1,15 @@
 package me.kustomkraft.kustomwarn.commands;
 
 import me.kustomkraft.kustomwarn.KustomWarn;
-
 import me.kustomkraft.kustomwarn.utils.Warnings;
 
 import org.bukkit.ChatColor;
-
+import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.ConsoleCommandSender;
 
-import org.bukkit.entity.Player;
 
 import java.util.List;
 
@@ -30,6 +28,8 @@ public class KWarn implements CommandExecutor
     {
         ConsoleCommandSender consoleSender = sender.getServer().getConsoleSender();
         String prefix = (ChatColor.BOLD + (ChatColor.BLUE + "[")) + (ChatColor.RESET + (ChatColor.YELLOW + "Kustom Warn")) + (ChatColor.BOLD + (ChatColor.BLUE + "]")) + ChatColor.RESET;
+        String kickMessage = plugin.getConfig().getString("Kick Message");
+        String banMessage = plugin.getConfig().getString("Ban Message");
         String reason = " ";
         for (int i = 1; i < args.length; i++)
         {
@@ -39,7 +39,7 @@ public class KWarn implements CommandExecutor
         {
             if (!(sender instanceof Player))
             {
-                if (args.length == 0)
+                if (args.length == 0)                                      `""
                 {
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Usage: /kwarn [player] (reason)");
@@ -55,6 +55,11 @@ public class KWarn implements CommandExecutor
                         {
                             Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
                         }
+                        if ((warnings.size() + 1) >= plugin.getConfig().getInt("Kick After"))
+                        {
+                            targetPlayer.setPlayerListName(ChatColor.AQUA + targetPlayer.getName());
+                        }
+                        else if ((warnings.size() + 1) >= plugin.getConfig().getInt("Ban After"))
                         if(warnings.size() != 0)
                         {
                             consoleSender.sendMessage(prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned " + String.valueOf(warnings.size() + 1) + " times");
@@ -73,6 +78,16 @@ public class KWarn implements CommandExecutor
                             warning.setAdminName("console user");
                         }
                         plugin.getDatabase().save(warning);
+
+                        if ((warnings.size() + 1) == plugin.getConfig().getInt("Kick After"))
+                        {
+                            targetPlayer.kickPlayer(plugin.getConfig().getString("Kick Message"));
+                        }
+                        else if((warnings.size() + 1) == plugin.getConfig().getInt("Ban After"))
+                        {
+                            targetPlayer.kickPlayer(plugin.getConfig().getString("Ban Message"));
+                            targetPlayer.setBanned(true);
+                        }
                         return true;
                     }
                     else
@@ -99,6 +114,14 @@ public class KWarn implements CommandExecutor
                         {
                             consoleSender.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
                         }
+                        if (plugin.getConfig().getBoolean("Alert Admins"))
+                        {
+                            Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
+                        }
+                        if ((warnings.size() + 1) >= plugin.getConfig().getInt("Kick After"))
+                        {
+                            targetPlayer.setPlayerListName(ChatColor.AQUA + targetPlayer.getName());
+                        }
                         targetPlayer.sendMessage(prefix + ChatColor.RED + plugin.getConfig().getString("Warning For") + " " + reason);
                         Warnings warning = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", targetPlayer.getName()).ieq("warningNumber", String.valueOf(warnings.size() + 1)).findUnique();
                         if (warnings.size() < plugin.getConfig().getInt("Ban After"))
@@ -110,6 +133,16 @@ public class KWarn implements CommandExecutor
                             warning.setWarningReason(reason);
                         }
                         plugin.getDatabase().save(warning);
+
+                        if ((warnings.size() + 1) == plugin.getConfig().getInt("Kick After"))
+                        {
+                            targetPlayer.kickPlayer(plugin.getConfig().getString("Kick Message"));
+                        }
+                        else if((warnings.size() + 1) == plugin.getConfig().getInt("Ban After"))
+                        {
+                            targetPlayer.kickPlayer(plugin.getConfig().getString("Ban Message"));
+                            targetPlayer.setBanned(true);
+                        }
                         return true;
                     }
                 }
@@ -121,6 +154,10 @@ public class KWarn implements CommandExecutor
                 {
                     if (args.length == 0)
                     {
+                        if (plugin == null)
+                        {
+                            player.sendMessage(prefix + "Plugin is null");
+                        }
                         player.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
                         player.sendMessage(prefix + ChatColor.RED + "Usage: /kwarn [player] (reason)");
                         return true;
@@ -152,6 +189,24 @@ public class KWarn implements CommandExecutor
                                 warning.setAdminName(player.getName());
                             }
                             plugin.getDatabase().save(warning);
+
+                            if ((warnings.size() + 1) == plugin.getConfig().getInt("Kick After"))
+                            {
+                                targetPlayer.kickPlayer(plugin.getConfig().getString("Kick Message"));
+                            }
+                            else if((warnings.size() + 1) == plugin.getConfig().getInt("Ban After"))
+                            {
+                                targetPlayer.kickPlayer(plugin.getConfig().getString("Ban Message"));
+                                targetPlayer.setBanned(true);
+                            }
+                            if (plugin.getConfig().getBoolean("Alert Admins"))
+                            {
+                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
+                            }
+                            if ((warnings.size() + 1) >= plugin.getConfig().getInt("Kick After"))
+                            {
+                                targetPlayer.setPlayerListName(ChatColor.AQUA + targetPlayer.getName());
+                            }
                             return true;
                         }
                         else
@@ -174,6 +229,10 @@ public class KWarn implements CommandExecutor
                             {
                                 player.sendMessage(prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned " + String.valueOf(warnings.size() + 1) + " times");
                             }
+                            if (setKicked(targetPlayer.getName()))
+                            {
+                                targetPlayer.kickPlayer(plugin);
+                            }
                             else
                             {
                                 player.sendMessage(prefix + ChatColor.AQUA + "This is " + targetPlayer.getName() + "\'s first warning");
@@ -189,6 +248,11 @@ public class KWarn implements CommandExecutor
                                 warning.setWarningReason(reason);
                             }
                             plugin.getDatabase().save(warning);
+
+                            if (plugin.getConfig().getBoolean("Alert Admins"))
+                            {
+                                Command.broadcastCommandMessage(sender, prefix + ChatColor.AQUA + targetPlayer.getName() + " has been warned by a console user");
+                            }
                             return true;
                         }
                         else
@@ -202,4 +266,25 @@ public class KWarn implements CommandExecutor
         }
         return true;
     }
+
+    public boolean setKicked(String playerName)
+    {
+        List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", playerName).findList();
+        if ((warnings.size() + 1) == plugin.getConfig().getInt("Kick After"))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean setBanned(String playerName)
+    {
+        List warnings = plugin.getDatabase().find(Warnings.class).where().ieq("playerName", playerName).findList();
+        if ((warnings.size() + 1) == plugin.getConfig().getInt("Ban After"))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -8,10 +8,6 @@ import me.kustomkraft.kustomwarn.utils.PluginUpdater;
 
 //Bukkit imports
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -70,8 +66,8 @@ public class KustomWarn extends JavaPlugin {
         getCommand("kreload").setExecutor(new KReload(this));
         getCommand("kreset").setExecutor(new KReset(this));
 
-        setupDatabase();
-
+        //Registering events
+        pm.registerEvents(new TagName(this), this);
         this.pluginUpdater = new PluginUpdater(this, "http://dev.bukkit.org/bukkit-plugins/kustom-warn/files.rss");
         if (this.getConfig().getBoolean("Auto Update"))
         {

@@ -6,7 +6,7 @@
 
     <groupId>me.kustomkraft</groupId>
     <artifactId>kustomwarn</artifactId>
-    <version>0.04</version>
+    <version>1.1</version>
     <name>KustomWarn</name>
     <description>Warn players that are breaking the rules. With customisable messages.</description>
     <contributors>
@@ -97,9 +97,10 @@
                 <version>1.6</version>
                 <configuration>
                     <artifactSet>
-                        <exclusions>
+                        <excludes>
                             <exclude>org.bukkit:bukkit:jar:*</exclude>
-                        </exclusions>
+                            <exclude>org.kitteh:tagapi:jar:*</exclude>
+                        </excludes>
                     </artifactSet>
                 </configuration>
                 <executions>
@@ -110,6 +111,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <finalName>${project.artifactId}</finalName>
+                </configuration>
             </plugin>
         </plugins>
 

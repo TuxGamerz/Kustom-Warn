@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="kustomwarn:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/kustomwarn_jar</output-path>
+    <root id="archive" name="kustomwarn.jar">
+      <element id="module-output" name="kustomwarn" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mcstats/bukkit/metrics/R7/metrics-R7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.7.5-R0.1-SNAPSHOT/bukkit-1.7.5-R0.1-20140324.183156-3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

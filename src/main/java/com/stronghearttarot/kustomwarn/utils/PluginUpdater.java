@@ -1,6 +1,6 @@
-package me.kustomkraft.kustomwarn.utils;
+package com.stronghearttarot.kustomwarn.utils;
 
-import me.kustomkraft.kustomwarn.KustomWarn;
+import com.stronghearttarot.kustomwarn.KustomWarn;
 import org.bukkit.Bukkit;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

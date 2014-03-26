@@ -1,8 +1,8 @@
-package me.kustomkraft.kustomwarn.commands;
+package com.stronghearttarot.kustomwarn.commands;
 
 //Internal imports
-import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.utils.Warnings;
+import com.stronghearttarot.kustomwarn.KustomWarn;
+import com.stronghearttarot.kustomwarn.utils.Warnings;
 
 //Bukkit imports
 import org.bukkit.ChatColor;

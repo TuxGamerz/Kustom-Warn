@@ -1,4 +1,4 @@
-package me.kustomkraft.kustomwarn.utils;
+package com.stronghearttarot.kustomwarn.utils;
 
 import com.avaje.ebean.validation.NotNull;
 

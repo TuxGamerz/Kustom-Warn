@@ -1,10 +1,10 @@
-package me.kustomkraft.kustomwarn;
+package com.stronghearttarot.kustomwarn;
 
 //Internal imports
-import me.kustomkraft.kustomwarn.commands.*;
-import me.kustomkraft.kustomwarn.listeners.PlayerAlert;
-import me.kustomkraft.kustomwarn.utils.Warnings;
-import me.kustomkraft.kustomwarn.utils.PluginUpdater;
+import com.stronghearttarot.kustomwarn.commands.*;
+import com.stronghearttarot.kustomwarn.listeners.PlayerAlert;
+import com.stronghearttarot.kustomwarn.utils.Warnings;
+import com.stronghearttarot.kustomwarn.utils.PluginUpdater;
 
 //Bukkit imports
 import org.bukkit.Bukkit;

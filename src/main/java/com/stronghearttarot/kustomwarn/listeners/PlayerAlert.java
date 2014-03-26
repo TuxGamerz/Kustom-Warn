@@ -1,6 +1,6 @@
-package me.kustomkraft.kustomwarn.listeners;
+package com.stronghearttarot.kustomwarn.listeners;
 
-import me.kustomkraft.kustomwarn.KustomWarn;
+import com.stronghearttarot.kustomwarn.KustomWarn;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

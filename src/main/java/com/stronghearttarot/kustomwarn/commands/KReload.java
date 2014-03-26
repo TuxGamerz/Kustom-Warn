@@ -1,6 +1,6 @@
-package me.kustomkraft.kustomwarn.commands;
+package com.stronghearttarot.kustomwarn.commands;
 
-import me.kustomkraft.kustomwarn.KustomWarn;
+import com.stronghearttarot.kustomwarn.KustomWarn;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

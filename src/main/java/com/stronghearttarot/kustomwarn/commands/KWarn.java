@@ -1,7 +1,7 @@
-package me.kustomkraft.kustomwarn.commands;
+package com.stronghearttarot.kustomwarn.commands;
 
-import me.kustomkraft.kustomwarn.KustomWarn;
-import me.kustomkraft.kustomwarn.utils.Warnings;
+import com.stronghearttarot.kustomwarn.KustomWarn;
+import com.stronghearttarot.kustomwarn.utils.Warnings;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -39,7 +39,7 @@ public class KWarn implements CommandExecutor
         {
             if (!(sender instanceof Player))
             {
-                if (args.length == 0)                                      `""
+                if (args.length == 0)
                 {
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
                     consoleSender.sendMessage(prefix + ChatColor.RED + "Usage: /kwarn [player] (reason)");
